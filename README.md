@@ -1,11 +1,11 @@
 # FedIPR-Repository
 
-[ArXiv](https://arxiv.org/abs/2109.13236) | [PDF](https://arxiv.org/pdf/2109.13236.pdf)
+[TPAMI 2022](https://ieeexplore.ieee.org/document/9847383) | [ArXiv](https://arxiv.org/abs/2109.13236) | [PDF](https://arxiv.org/pdf/2109.13236.pdf)
 
 ### Official pytorch implementation of the paper: 
 #### - FedIPR: Ownership Verification for Federated Deep Neural Network Models
 
-Accepted by [TPAMI 2022]()
+Accepted by [TPAMI 2022](https://ieeexplore.ieee.org/document/9847383)
 
 ## Description
 
