@@ -9,6 +9,17 @@ Accepted by [TPAMI 2022](https://ieeexplore.ieee.org/document/9847383)
 
 ## Description
 
+<p align="justify"> Federated learning models are collaboratively developed upon valuable training data owned by multiple parties. During the
+development and deployment of federated models, they are exposed to risks including illegal copying, re-distribution, misuse and/or
+free-riding. To address these risks, the ownership verification of federated learning models is a prerequisite that protects federated
+learning model intellectual property rights (IPR) i.e., FedIPR. We propose a novel federated deep neural network (FedDNN) ownership
+verification scheme that allows private watermarks to be embedded and verified to claim legitimate IPR of FedDNN models. In the
+proposed scheme, each client independently verifies the existence of the model watermarks and claims respective ownership of the
+federated model without disclosing neither private training data nor private watermark information. </p>
+
+<p align="center"> <img src="Framwork_new.eps" width="25%">   <img src="Ex1.gif" width="25%"> </p>
+<p align="center"> Figure 1: Framework of FedIPR </p>
+
 ## How to run
 
 ## Dataset
