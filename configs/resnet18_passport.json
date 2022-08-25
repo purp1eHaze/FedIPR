@@ -1,0 +1,45 @@
+{
+  "layer1": {
+    "0": {
+      "convbnrelu_1": false,
+      "convbn_2": false
+    },
+    "1": {
+      "convbnrelu_1": false,
+      "convbn_2": false
+    }
+  },
+  "layer2": {
+    "0": {
+      "convbnrelu_1": false,
+      "convbn_2": false,
+      "shortcut": false
+    },
+    "1": {
+      "convbnrelu_1": false,
+      "convbn_2": false
+    }
+  },
+  "layer3": {
+    "0": {
+      "convbnrelu_1": false,
+      "convbn_2": false,
+      "shortcut": false
+    },
+    "1": {
+      "convbnrelu_1": false,
+      "convbn_2": false
+    }
+  },
+  "layer4": {
+    "0": {
+      "convbnrelu_1": "this is my signature",
+      "convbn_2": "this is my signature",
+      "shortcut": false
+    },
+    "1": {
+      "convbnrelu_1": "this is my signature",
+      "convbn_2": "this is my signature"
+    }
+  }
+}

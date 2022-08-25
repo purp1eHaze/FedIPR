@@ -1,5 +1,5 @@
 import torch 
-from models.alexnet_passport_private import AlexNetPassportPrivate
+from models.alexnet import AlexNetPassportPrivate
 
 def construct_passport_kwargs(self):
     passport_settings = self.passport_config

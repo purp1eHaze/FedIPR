@@ -25,6 +25,7 @@ class Experiment(object):
         self.save_history_interval = 1
         self.device = torch.device('cuda')
         
+        root = "/home/lbw/Code/FedIPR2.0/"
         self.num_users = args.num_users
         self.num_back = args.num_back
         self.num_sign = args.num_sign
@@ -48,12 +49,12 @@ class Experiment(object):
         self.data_root = args.data_root
         self.local_ep = args.local_ep
         self.sampling_type = args.sampling_type
-        root = "/home/lbw/Code/FedIPR2.0/"
+        
         if args.model_name == 'resnet':
-            self.passport_config = json.load(open(root + 'passport_configs/resnet18_passport.json'))
+            self.passport_config = json.load(open(root + 'configs/resnet18_passport.json'))
 
         if args.model_name == 'alexnet':
-            self.passport_config = json.load(open(root + 'passport_configs/alexnet_passport.json'))
+            self.passport_config = json.load(open(root + 'configs/alexnet_passport.json'))
 
         self.sl_ratio = args.loss_alpha
         self.logdir = f'logs/{self.model_name}_{self.dataset}'

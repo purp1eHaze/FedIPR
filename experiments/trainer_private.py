@@ -8,7 +8,7 @@ import torch.nn.functional as F
 import torch.optim as optim 
 import numpy as np
 from models.losses.sign_loss import SignLoss
-from models.alexnet_passport_private import AlexNetPassportPrivate
+from models.alexnet import AlexNetPassportPrivate
 import time
 
 def accuracy(output, target, topk=(1,)):
