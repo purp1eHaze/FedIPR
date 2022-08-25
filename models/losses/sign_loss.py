@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from models.alexnet import AlexNetPassportPrivate
+from models.alexnet import AlexNet
 import sys
 
 class SignLoss():
@@ -15,7 +15,7 @@ class SignLoss():
 
     def get_loss(self):
         self.reset()
-        if isinstance(self.model, AlexNetPassportPrivate):
+        if isinstance(self.model, AlexNet):
             for m in self.kwargs:
                 if self.kwargs[m]['flag'] == True:
                     b = self.kwargs[m]['b']

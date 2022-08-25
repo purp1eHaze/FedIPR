@@ -1,5 +1,5 @@
 import torch 
-from models.alexnet import AlexNetPassportPrivate
+from models.alexnet import AlexNet
 
 def construct_passport_kwargs(self):
     passport_settings = self.passport_config
@@ -41,7 +41,6 @@ def construct_passport_kwargs(self):
   
                         bsign = torch.sign(torch.rand(output_channels) - 0.5)
                         # bitstring = ''.join([format(ord(c), 'b').zfill(8) for c in b])
-                       
                         # for j, c in enumerate(bitstring):
                         #     if c == '0':
                         #         bsign[j] = -1

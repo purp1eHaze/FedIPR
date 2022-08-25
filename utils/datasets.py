@@ -118,7 +118,7 @@ class WMDataset(Dataset):
     def __len__(self):
         return len(self.datapaths)
 
-def prepare_wm(datapath='/home/lbw/Data/trigger/pics/', num_back=1, shuffle=True):
+def prepare_wm(datapath='/trigger/pics/', num_back=1, shuffle=True):
     
     triggerroot = datapath
     labelpath = '/home/lbw/Data/trigger/labels-cifar.txt'
@@ -172,10 +172,6 @@ def prepare_wm_new(datapath, num_back=1, num_trigger=40, shuffle=True):
 
     wm_transform = transforms.Compose([transforms.ToTensor()])
     dataset = torchvision.datasets.ImageFolder(datapath, wm_transform)
-
-    # num_trigger = num_trigger * num_back 
-    # dataset = DatasetSplit(dataset, np.arange(0, num_trigger))
-
     
     if num_back != 0:
         dict_users_back = wm_iid(dataset, num_back, num_trigger)

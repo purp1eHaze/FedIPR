@@ -8,7 +8,7 @@ import torch.nn.functional as F
 import torch.optim as optim 
 import numpy as np
 from models.losses.sign_loss import SignLoss
-from models.alexnet import AlexNetPassportPrivate
+from models.alexnet import AlexNet
 import time
 
 def accuracy(output, target, topk=(1,)):
@@ -40,7 +40,7 @@ class TesterPrivate(object):
         
         with torch.no_grad():
             if kwargs != None:
-                if isinstance(self.model, AlexNetPassportPrivate):
+                if isinstance(self.model, AlexNet):
                     for m in kwargs:
                         if kwargs[m]['flag'] == True:
                             b = kwargs[m]['b']

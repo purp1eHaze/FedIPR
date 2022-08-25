@@ -33,6 +33,8 @@ class IPRFederatedLearning(Experiment):
         self.num_trigger = args.num_trigger
         self.dp = args.dp
         self.sigma = args.sigma
+
+        data_root = '/home/lbw/Data/'
  
         print('==> Preparing data...')
         self.train_set, self.test_set, self.dict_users = get_data(dataset=self.dataset,
@@ -44,12 +46,12 @@ class IPRFederatedLearning(Experiment):
         print('==> Preparing watermark..')
         if args.backdoor_indis:
             if args.dataset == 'cifar10':
-                #self.wm_data, self.wm_dict = prepare_wm_indistribution('/home/lbw/Data/trigger/cifar10/', self.num_back, self.num_trigger)
-                self.wm_data, self.wm_dict = prepare_wm_new('/home/lbw/Data/trigger/cifar10/', self.num_back, self.num_trigger)
+
+                self.wm_data, self.wm_dict = prepare_wm_new(data_root + 'trigger/cifar10/', self.num_back, self.num_trigger)
             if args.dataset == 'cifar100':
-                self.wm_data, self.wm_dict = prepare_wm_indistribution('/home/lbw/Data/trigger/cifar100/', self.num_back, self.num_trigger)
+                self.wm_data, self.wm_dict = prepare_wm_indistribution(data_root + 'trigger/cifar100/', self.num_back, self.num_trigger)
         else:
-            self.wm_data, self.wm_dict = prepare_wm('/home/lbw/Data/trigger/pics', self.num_back)
+            self.wm_data, self.wm_dict = prepare_wm(data_root + 'trigger/pics', self.num_back)
         
 
         if self.weight_type == 'gamma':
@@ -294,10 +296,12 @@ def main(args):
     logs['test_acc'] = test_acc
     logs['bp_local'] = True if args.bp_interval == 0 else False
 
-    if not os.path.exists('/home/lbw/Code/FedIPR3.0/save/' + args.model_name +'/' + args.dataset):
-        os.makedirs('/home/lbw/Code/FedIPR3.0/save/' + args.model_name +'/' + args.dataset)
+    save_dir = '/home/lbw/Code/FedIPR3.0/save/'
+
+    if not os.path.exists(save_dir + args.model_name +'/' + args.dataset):
+        os.makedirs(save_dir + args.model_name +'/' + args.dataset)
     torch.save(logs,
-               '/home/lbw/Code/FedIPR3.0/save/' + args.model_name +'/' + args.dataset + '/Dp_{}_{}_iid_{}_num_sign_{}_w_type_{}_loss_{}_B_{}_alpha_{}_num_back_{}_type_{}_T_{}_epoch_{}_E_{}_u_{}_{:.1f}_{:.4f}_{:.4f}_wm_{:.4f}_sign_{:.4f}.pkl'.format(
+               save_dir + args.model_name +'/' + args.dataset + '/Dp_{}_{}_iid_{}_num_sign_{}_w_type_{}_loss_{}_B_{}_alpha_{}_num_back_{}_type_{}_T_{}_epoch_{}_E_{}_u_{}_{:.1f}_{:.4f}_{:.4f}_wm_{:.4f}_sign_{:.4f}.pkl'.format(
                    args.dp, args.sigma, args.iid, args.num_sign, args.weight_type, args.loss_type, args.num_bit, args.loss_alpha, args.num_back, args.backdoor_indis, args.num_trigger, args.epochs, args.local_ep, args.num_users, args.frac, time, test_acc, acc_wm, acc_sign
                ))
     return
