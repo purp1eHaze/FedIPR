@@ -17,7 +17,7 @@ verification scheme that allows private watermarks to be embedded and verified t
 proposed scheme, each client independently verifies the existence of the model watermarks and claims respective ownership of the
 federated model without disclosing neither private training data nor private watermark information. </p>
 
-![avatar](imgs/Framwork_new.eps)
+![avatar](imgs/Framwork_new.png)
 
 <p align="center"> Figure 1: Framework of FedIPR </p>
 
