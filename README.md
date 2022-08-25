@@ -26,7 +26,7 @@ python main_fedIPR.py --num_back 10  --num_trigger 10 --num_sign 10 --num_bit 40
 
 ## Dataset
 The standard CIFAR datasets can be found at [the official site](http://www.cs.toronto.edu/~kriz/cifar.html), 
-We provide a trigger dataset at [here](http://www.cs.toronto.edu/~kriz/cifar.html), you can also generate your own triggers with Projected Gradient Descent algorithm, or design your own triggers with specific patterns.
+We provide a trigger dataset at [here](http://www.cs.toronto.edu/~kriz/cifar.html), you can also generate your own triggers with Projected Gradient Descent algorithm [PGD](https://github.com/cleverhans-lab/cleverhans), or design your own triggers with specific patterns.
 
 ## Passport block
 Passport block is the layer where we embed our feature based watermarks, the architecture implementation can be found at "models/layers/passportconv2d_private.py".
