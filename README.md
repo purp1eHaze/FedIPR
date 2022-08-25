@@ -25,6 +25,13 @@ federated model without disclosing neither private training data nor private wat
 python main_fedIPR.py --num_back 10  --num_trigger 10 --num_sign 10 --num_bit 40 --num_users 10 --dataset cifar10 --model_name alexnet --epochs 200 --gpu 0 --local_ep 2 --iid 
 
 ## Dataset
+The standard CIFAR datasets can be found at [the official site](http://www.cs.toronto.edu/~kriz/cifar.html), 
+We provide a trigger dataset at [here](http://www.cs.toronto.edu/~kriz/cifar.html), you can also generate your own triggers with Projected Gradient Descent algorithm, or design your own triggers with specific patterns.
+
+## Passport block
+Passport block is the layer where we embed our feature based watermarks, the architecture implementation can be found at "models/layers/passportconv2d_private.py".
+
+The specific loss regularization term for feature-based watermark embedding can be found at "models/losses/sign_loss.py"
 
 ## How to embed feature-based watermarks into a desired layer
 
