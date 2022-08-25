@@ -19,15 +19,16 @@ federated model without disclosing neither private training data nor private wat
 
 ![avatar](imgs/Framwork_new.png)
 
-<p align="center"> Figure 1: Framework of FedIPR </p>
+<p align="center"> Figure 1: An illustration of federated DNN (FedDNN) watermark Embedding and Verification scheme. Private watermarks are generated and embedded into the local models, which are then aggregated using the FedAvg algo. (the left panel). In case the federated model is plagiarized, each client may invoke verification processes to extract watermarks from the plagiarized model in both black-box and white-box manner to claim his/her ownership of the federated model (the right panel) </p>
 
 ## How to run
+python main_fedIPR.py --num_back 10  --num_trigger 10 --num_sign 10 --num_bit 40 --num_users 10 --dataset cifar10 --model_name alexnet --epochs 200 --gpu 0 --local_ep 2 --iid 
 
 ## Dataset
 
 ## How to embed feature-based watermarks into a desired layer
 
-All configs are stored in `/`
+Configs for feature-based watermarks are stored in `configs/`
 
 For example, a layer with 256 channels, so the maximum will be 256-bit === 32 ascii characters are allowed. If the watermark is less than 32 characters, the remaining bits will be set randomly.
 
@@ -46,6 +47,12 @@ The example below is AlexNet with the last 3 layers as the passport layer, i.e w
 ## Citation
 If you find this work useful for your research, please cite
 ```
-TBD
+@article{li2022fedipr,
+  title={FedIPR: Ownership Verification for Federated Deep Neural Network Models},
+  author={Li, Bowen and Fan, Lixin and Gu, Hanlin and Li, Jie and Yang, Qiang},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2022},
+  publisher={IEEE}
+}
 ```
 &#169;2022 Webank and Shanghai Jiao Tong University.
