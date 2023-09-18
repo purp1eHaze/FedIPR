@@ -152,7 +152,7 @@ class IPRFederatedLearning(Experiment):
 
             start = time.time()
             for idx in tqdm(idxs_users, desc='Epoch:%d, lr:%f' % (self.epochs, self.lr)):
-                #self.model.load_state_dict(self.w_t)
+                self.model.load_state_dict(self.w_t)
      
                 if idx < self.num_back:
                     local_w, local_loss, sign_loss = self.trainer._local_update(local_train_ldrs[idx], wm_loaders[idx], self.local_ep, self.lr, self.keys[idx], self.scheme)
